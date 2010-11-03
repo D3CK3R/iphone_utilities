@@ -39,6 +39,10 @@
 								   1.0, 1.0, 1.0, 1.0};
 	shadingGradient = CGGradientCreateWithColorComponents(colorspace, blackComponents, blackLocations, black_num_locations);
 	CGContextDrawLinearGradient(context, shadingGradient, CGPointMake(0, self.frame.size.height), CGPointMake(0, 0), kCGGradientDrawsAfterEndLocation);
+	
+	CGColorSpaceRelease(colorspace);
+	CGGradientRelease(rainbowGradient);
+	CGGradientRelease(shadingGradient);
 }
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
